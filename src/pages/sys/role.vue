@@ -157,7 +157,6 @@
               this.load();
             }).catch(e => {
             this.$message('操作成功');
-            console.log(checkKeys);
             this.batchDeleteFromTree(this.roleTree, checkKeys);
           })
         });

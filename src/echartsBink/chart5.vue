@@ -109,7 +109,6 @@
         var that = this;
         var temp = flag;
         if(this.param5) {
-          console.log(1232132)
           //显示数据加载
           this.chart.showLoading('default', {
             text: '数据加载中。。。',

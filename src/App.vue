@@ -101,7 +101,7 @@
 //          // parse meta tags
 //          this.$Progress.parseMeta(meta)
 //        }
-        console.log(to);
+        (to);
         this.$store.dispatch('changeCurrentMenu',to);
         //  start the progress bar
         this.$Progress.start()
@@ -111,7 +111,7 @@
       //  hook the progress bar to finish after we've finished moving router-view
       this.$router.afterEach((to, from) => {
         //  finish the progress bar
-//        console.log(JSON.stringify())
+//        (JSON.stringify())
         this.$Progress.finish()
       })
 

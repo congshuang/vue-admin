@@ -65,12 +65,12 @@ app.use(staticPath, express.static('./static'))
 var uri = 'http://localhost:' + port
 
 devMiddleware.waitUntilValid(function () {
-  console.log('> Listening at ' + uri + '\n')
+  ('> Listening at ' + uri + '\n')
 })
 
 module.exports = app.listen(port, function (err) {
   if (err) {
-    console.log(err)
+    (err)
     return
   }
 

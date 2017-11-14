@@ -57,8 +57,8 @@
     data() {
       return {
         form: {
-          username: '',
-          password: ''
+          username: 'dwqdwqdwqd332132',
+          password: 'gregrggrgregredqwdwqddwq'
         },
         token:'',
         params:{
@@ -87,21 +87,30 @@
         if (this.$route.query && this.$route.query != null && this.$route.query.redirect && this.$route.query.redirect != null) {
           redirectUrl = this.$route.query.redirect;
         }
-        sysApi.login(this.form).then(res => {
 
-          this.loginSuccess({...res,redirectUrl})
-        })
         var clientId = 'dwqdwqdwqd332132';
         var clientSecret = 'gregrggrgregredqwdwqddwq';
         var str = Base64.encode(clientId+":"+clientSecret);
         this.setAdmin(this.form);
         this.$http.defaults.headers.common['Authorization'] = "Basic "+str;
+        sysApi.login(this.form).then(resw => {
+          sysApi.getToken().then(res => {
+
+            var sid = res.content.access_token;
+            (sid)
+            auth.login(sid);
+            that.$http.defaults.headers.common['access_token'] = sid;
+            that.loginSuccess({...resw,redirectUrl});
+          })
+
+        })
         var valId = window.setInterval(function () {
           if(that.user.password == ''){
             window.clearInterval(valId);
           }else{
             sysApi.getToken().then(res => {
-              var sid = res.access_token;
+
+              var sid = res.content.access_token;
               auth.login(sid);
               that.$http.defaults.headers.common['access_token'] = sid;
             })

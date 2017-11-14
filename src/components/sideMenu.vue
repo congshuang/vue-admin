@@ -84,7 +84,7 @@
     },
     mounted () {
       let route = this.$route
-//      console.log(route)
+//      (route)
 //      if (route.name) {
 //        this.shouldExpandMatchItem(route)
 //      }

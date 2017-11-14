@@ -37,7 +37,7 @@
       option(){
         var indexName =this.getDataByIndexNames(this.indexNames, this.dataModel);
         var indexChineseNames = this.indexChineseNames;
-        console.log(this.dataModel);
+        (this.dataModel);
 
         var op = {
           color: ['#F08529'],
@@ -168,7 +168,6 @@
         this.makeTempData();
         setTimeout(function() {
           if(temp == flag) {
-            console.log(1);
             that.updateChart();
             that.chart.hideLoading();
           }

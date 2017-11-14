@@ -42,7 +42,7 @@
       option(){
         var indexName =this.getDataByIndexNames(this.indexNames, this.dataModel);
         var indexChineseNames = this.indexChineseNames;
-        console.log(this.dataModel);
+        (this.dataModel);
 
         var op = {
           color: ['#FFCC00'],
@@ -148,7 +148,6 @@
         var flag = new Date();
         var that = this;
         var temp = flag;
-        console.log(this.param2)
         if(this.param2) {
 
           //显示数据加载

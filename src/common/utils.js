@@ -67,7 +67,7 @@ export function getCurrentMenu (location, arrayMenu) {
       }
       if (e.href && pathToRegexp(e.href).exec(location)) {
         current.push({ ...e, children: null });
-        console.log(current);
+        (current);
         return current;
       }
     }

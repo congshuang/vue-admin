@@ -18,7 +18,7 @@
       <el-col :span="18" :xs="24" :sm="24" :md="18" :lg="18">
         <el-card class="box-card">
           <div slot="header" class="clearfix">
-          {{textTree}}
+            {{textTree}}
 
           </div>
           <div class="text item">
@@ -119,10 +119,10 @@
 
         return (
           <span>
-            <span>
-              <span>{node.label}</span>
-            </span>
-          </span>);
+          <span>
+          <span>{node.label}</span>
+        </span>
+        </span>);
       },
       deleteSelected(){
         this.$http.get(api.SYS_RESOURCE_DELETE + "?resourceIds=" + this.form.id)
@@ -154,7 +154,7 @@
               this.load();
             }).catch(e => {
             this.$message('操作成功');
-            console.log(checkKeys);
+            (checkKeys);
             this.batchDeleteFromTree(this.resourceTree, checkKeys);
           })
         });
@@ -168,12 +168,11 @@
         if (this.form.id == null) {
           this.$http.post(api.SYS_RESOURCE_ADD, this.form)
             .then(res => {
-              console.log(11)
+              (11)
               this.$message('操作成功');
               this.form.id = res.data.id;
               this.appendTreeNode(this.resourceTree, res.data);
             }).catch(e => {
-            console.log(11111)
             this.maxId += 1;
             this.$message('操作成功');
             this.form.id = this.maxId;
@@ -209,16 +208,13 @@
             this.resourceTree = [];
             this.resourceTree.push(...res)
           })
-        var time =new Date().getMilliseconds();
-        time = time-1000000000;
         var params = {
-          date: time,
+          logic_no: 'TXK00005',
           zone_code:'320581999999'
         }
-        var that = this;
-        sysApi.add(params)
+        sysApi.textList(params)
           .then(res=>{
-            that.textTree = res;
+            this.textTree = res;
           })
       }
     },

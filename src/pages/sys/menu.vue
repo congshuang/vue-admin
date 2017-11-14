@@ -562,7 +562,6 @@
     methods: {
       selectIcon(event){
         this.form.icon = event.target.className;
-        console.log(this.form.icon)
         this.selectIconDialog = false;
       },
       renderContent(h, { node, data, store }) {
